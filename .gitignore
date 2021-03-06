@@ -12,7 +12,6 @@ autom4te.cache
 build-aux
 config.*
 configure
-h264_analyze
 svc_split
 libtool
 m4/libtool.m4
