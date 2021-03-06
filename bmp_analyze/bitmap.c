@@ -110,6 +110,11 @@ ssize_t bitmap_image_color_table(struct BITMAP_IMAGE *image)
 
 }
 
+void printf_bmp_info(struct BITMAP_INFO_HEADER *header) {
+    printf("image_width:%d\n", header->image_width);
+    printf("image_height:%d\n", header->image_height);
+    printf("bits_per_pixel :%d\n", header->bits_per_pixel);
+}
 
 ssize_t bitmap_image_header(struct BITMAP_IMAGE *image)
 {
@@ -129,6 +134,7 @@ ssize_t bitmap_image_header(struct BITMAP_IMAGE *image)
 	if (retval - sizeof(struct BITMAP_FILE_HEADER) <
 	    sizeof(struct BITMAP_INFO_HEADER))
 		return retval;
+    printf_bmp_info(image->info_header);
 
 	return retval;
 }
